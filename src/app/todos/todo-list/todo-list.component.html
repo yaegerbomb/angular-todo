@@ -1,0 +1,10 @@
+<h3>List of Things To Do:</h3>
+<ul id="todo-list">
+  <li *ngFor="let todo of toDos$ | async">
+    <span [class.completed-task]="todo.completed">{{ todo.title }} {{todo.completed}}</span>
+    <button type="button" class="edit" (click)="editToDo(todo)" [disabled]="todo.completed">Edit</button>
+    <button type="button" class="complete" (click)="completeToDo(todo)" [disabled]="todo.completed">Complete</button>
+    <button type="button" class="delete" (click)="deleteToDo(todo)">Delete</button>
+  </li>
+</ul>
+<button type="button" class="add" (click)="addToDo()">Add To Do</button>

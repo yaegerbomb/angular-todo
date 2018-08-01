@@ -1,0 +1,23 @@
+button{
+    background-color: #d3d3d3;
+    border: 1px solid #000;
+    color: black;
+    padding: 5px 10px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button.add{
+    margin-top: 15px;
+    width: 100%;
+    background-color: rgb(84, 146, 55);
+    color: #fff;
+}
+label{
+    margin-bottom: 5px;
+}
+input{
+    width: 100%;
+}

@@ -1,0 +1,7 @@
+<form (ngSubmit)="editToDo()" #todoForm="ngForm">
+  <div *ngIf="selectedTodo">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" [(ngModel)]="selectedTodo.title" required />
+  </div>
+  <button class="edit" type="submit" [disabled]="!todoForm.form.valid">Edit</button>
+</form>

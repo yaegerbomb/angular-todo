@@ -1,0 +1,10 @@
+#app{
+    width: 500px;
+}
+.danger{
+    width: 500px;
+    background-color: rgb(151, 60, 60);
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}

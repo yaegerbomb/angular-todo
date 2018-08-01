@@ -1,0 +1,71 @@
+#todo-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#todo-list li{
+    margin: 15px 0;
+    padding: 5px;
+}
+
+#todo-list li:nth-of-type(odd){
+    background-color: #d3d3d3;
+}
+
+button{
+    background-color: #d3d3d3;
+    border: 1px solid #000;
+    color: black;
+    padding: 5px 10px;
+}
+
+button.edit{
+    background-color: #5384ac8a;
+    color: #ffffff;
+    margin-left: 15px;
+}
+
+button.edit:disabled{
+    background-color: #8fafc98a;
+    border-color: #fff;
+}
+
+button.edit:disabled:hover{
+    cursor: not-allowed
+}
+
+button.complete{
+    background-color: #aca3538a;
+    color: #000000;
+    margin-left: 15px;
+}
+
+button.complete:disabled{
+    background-color: #bbb6858a;
+    border-color: #fff;
+}
+button.complete:disabled:hover{
+    cursor: not-allowed
+}
+
+button.delete{
+    background-color: #ac53538a;
+    color: #ffffff;
+    margin-left: 15px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button.add{
+    margin-top: 15px;
+    width: 100%;
+    background-color: rgb(84, 146, 55);
+    color: #fff;
+}
+
+.completed-task{
+    text-decoration: line-through;
+}

@@ -1,0 +1,24 @@
+button{
+    background-color: #d3d3d3;
+    border: 1px solid #000;
+    color: black;
+    padding: 5px 10px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button.edit{
+    margin-top: 15px;
+    width: 100%;
+    background-color: #5384ac8a;
+    color: #fff;
+}
+
+label{
+    margin-bottom: 5px;
+}
+input{
+    width: 100%;
+}
