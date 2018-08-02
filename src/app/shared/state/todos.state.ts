@@ -1,4 +1,4 @@
-import { CompleteToDo } from './../actions/todo.actions';
+import { CompleteToDo } from '../actions/todo.actions';
 import { DeleteToDo } from '../actions/todo.actions';
 import { Reconnected } from '../actions/shared.actions';
 import { TodoService } from '../services/todo.service';

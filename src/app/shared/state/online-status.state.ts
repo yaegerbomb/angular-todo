@@ -1,4 +1,4 @@
-import { OnlineStatusType } from '../modules/online-status/online-status-type.enum';
+import { OnlineStatusType } from '../../online-status/online-status-type.enum';
 import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { UpdateOnlineStatus } from '../actions/online-status.action';
 

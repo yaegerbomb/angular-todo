@@ -2,6 +2,7 @@ import { ToDo } from '../models/todo.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { InterceptorHttpParams } from '../interceptors/interceptor-http-params';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,9 @@ export class TodoService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
+      }),
+      params: new InterceptorHttpParams({
+        type: ToDo
       })
     };
     return this.http.post<ToDo>(this.root, todo, httpOptions);
@@ -28,6 +32,9 @@ export class TodoService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
+      }),
+      params: new InterceptorHttpParams({
+        type: ToDo
       })
     };
     return this.http.put<ToDo>(`${this.root}/${todo.id}`, todo, httpOptions);
@@ -35,6 +42,12 @@ export class TodoService {
   }
   
   deleteTodo(todo: ToDo): Observable<ToDo>{
-    return this.http.delete<ToDo>(`${this.root}/${todo.id}`,);
+    const httpOptions = {
+      params: new InterceptorHttpParams({
+        type: ToDo
+      })
+    };
+
+    return this.http.delete<ToDo>(`${this.root}/${todo.id}`, httpOptions);
   }
 }

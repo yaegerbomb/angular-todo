@@ -12,6 +12,7 @@ import {
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ErrorQueue } from '../models/error-queue.model';
+import { InterceptorHttpParams } from './interceptor-http-params';
 
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor{
@@ -26,15 +27,19 @@ export class HttpRequestInterceptor implements HttpInterceptor{
                 if (err instanceof HttpErrorResponse) {
                     // do error handling here
                     if(request.method !== "GET"){
-                        //queue our method
-                        this.store.dispatch(new PushErrorToQueue(
-                            new ErrorQueue(
-                                request.method,
-                                request.urlWithParams,
-                                request.body,
-                                request.headers
-                            )
-                        ))
+                        if (request.params instanceof InterceptorHttpParams){
+                            //queue our method
+                            this.store.dispatch(new PushErrorToQueue(
+                                new ErrorQueue(
+                                    request.method,
+                                    request.urlWithParams,
+                                    request.body,
+                                    request.headers,
+                                    request.params.interceptorConfig.type,
+                                    err
+                                )
+                            ))
+                        }
 
                     }
                 }
